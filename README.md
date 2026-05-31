@@ -13,6 +13,11 @@ traffic from the 4SICS "Geek Lounge" conference lab.
 - Tracing a complete ICS attack across three days
 - Producing an evidence-backed report with explicit confidence levels
 
+## Environment
+Malcolm running on an Ubuntu VM, accessed over HTTPS:
+
+![Malcolm running in the VM](malcolm-running.jpeg)
+
 ## The three-day story
 | Day | Phase | Key finding |
 |-----|-------|-------------|
