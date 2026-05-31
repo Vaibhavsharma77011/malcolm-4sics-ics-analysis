@@ -26,7 +26,7 @@ Modbus dashboard filtered to the attacker (`source.ip: 192.168.2.166`) on the
 Day 3 capture, showing repeated `WRITE_MULTIPLE_COILS` commands against control
 devices `192.168.88.95` and `192.168.88.60`:
 
-![Day 3 Modbus write attack](modbus-write-attack.png)
+![Day 3 Modbus write attack](modbus-write-attack.jpeg)
 
 Note the write **addresses (65533–65535)** — the very top of the coil address
 range. Combined with a high command-rejection rate and invalid function codes
