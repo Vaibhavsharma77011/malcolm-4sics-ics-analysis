@@ -20,19 +20,38 @@ traffic from the 4SICS "Geek Lounge" conference lab.
 | 2 (151021) | Reconnaissance | Web scanning + Modbus/S7comm fingerprinting; **no writes** |
 | 3 (151022) | Manipulation | Modbus attack with ~10,584 acknowledged coil-writes |
 
+## Key evidence — Day 3 Modbus write attack
+
+Modbus dashboard filtered to the attacker (`source.ip: 192.168.2.166`) on the
+Day 3 capture, showing repeated `WRITE_MULTIPLE_COILS` commands against control
+devices `192.168.88.95` and `192.168.88.60`:
+
+![Day 3 Modbus write attack](modbus-write-attack.png)
+
+Note the write **addresses (65533–65535)** — the very top of the coil address
+range. Combined with a high command-rejection rate and invalid function codes
+elsewhere in the session, this pattern indicates **protocol fuzzing/probing**
+rather than purposeful set-point manipulation.
+
 ## Key lesson
 The unfiltered data initially suggested an attacker wrote to the Siemens PLC.
-Filtering by source IP corrected this — the writes were legitimate, and the
-attacker had only made failed connection attempts. **Verify source attribution
-before drawing conclusions.**
+Filtering strictly by source IP corrected this — those writes were legitimate
+control traffic, and the attacker had only made failed connection attempts.
+**Verify source attribution before drawing conclusions.**
 
 ## Tools & skills
 `Malcolm` `Zeek` `Suricata` `Arkime` `OpenSearch` · Modbus / S7comm / DNP3 ·
-passive asset identification · alert triage · network forensics
+passive asset identification · alert triage · network forensics ·
+distinguishing observation from assessment
 
 ## Full report
-See [`/report`](./report) for the complete writeup (setup → methodology →
-all three days → findings → recommendations).
+See the [project report](Malcolm_4SICS_Full_Project_Report.pdf) for the complete
+writeup: environment setup → methodology (including real dead-ends and
+course-corrections) → all three days → findings → recommendations → lessons learned.
 
 ## Dataset
-[4SICS Geek Lounge captures](https://www.netresec.com/?page=PCAP4SICS) — Netresec
+[4SICS Geek Lounge captures](https://www.netresec.com/?page=PCAP4SICS) — Netresec.
+PCAPs are not redistributed here; download them from the source above to reproduce.
+
+---
+*Self-directed learning project. AI was used as a tutor during the learning process.*
