@@ -58,5 +58,3 @@ course-corrections) → all three days → findings → recommendations → less
 [4SICS Geek Lounge captures](https://www.netresec.com/?page=PCAP4SICS) — Netresec.
 PCAPs are not redistributed here; download them from the source above to reproduce.
 
----
-*Self-directed learning project. AI was used as a tutor during the learning process.*
