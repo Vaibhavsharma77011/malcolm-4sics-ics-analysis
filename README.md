@@ -50,7 +50,7 @@ passive asset identification · alert triage · network forensics ·
 distinguishing observation from assessment
 
 ## Full report
-See the [project report](Malcolm_4SICS_Full_Project_Report.pdf) for the complete
+See the [Report](Malcolm_4SICS_Full_Project_Report.pdf) for the complete
 writeup: environment setup → methodology (including real dead-ends and
 course-corrections) → all three days → findings → recommendations → lessons learned.
 
